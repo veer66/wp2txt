@@ -257,6 +257,7 @@ module Wp2txt
 
         article = Article.new(text, title, @strip_tmarker)
         output_text += block.call(article)
+        output_text += "\n@@@@@ARTICLEBREAK@@@@@\n"
         @total_size = output_text.bytesize
 
         # flagged when data exceeds the size of output file
